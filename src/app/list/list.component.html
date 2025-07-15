@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="books-container">
+        @for (item of bookList; track $index) {
+            <div class="book-card">
+                <img [src]="item.image" [alt]="item.title">
+                <div class="card-content">
+                    <p class="title">{{ item.title }}</p>
+                    <p class="author">{{item.author}}</p>
+                </div>
+            </div>
+        }
+    </div>
+    @if(bookList.length==0){
+       <div class="not-found">
+        <p>No se encontaron los libros</p>
+       </div> 
+    }
+</div>
